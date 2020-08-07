@@ -12,11 +12,15 @@ public class metodoUsuario {
 
     public void cadastraUsuario(Usuario usuario) {
             listaUsuarios.add(usuario);
+            System.out.println(usuario + "\n" );
     }
 
     public void buscaUsuario() {
         for (Usuario us : listaUsuarios) {
-            System.out.println(us.toString());
+            if(listaUsuarios == null){
+                System.out.println("\nLista não possui usuário cadastrado!\n");
+            }
+            System.out.println(us);
         }
     }
 
@@ -24,9 +28,8 @@ public class metodoUsuario {
         for (Usuario us : listaUsuarios) {
             if (us.getIdUsuario() == id) {
                 listaUsuarios.remove(us);
-            }
-            else {
-                System.out.println("Dados inválidos. Usuário não existe");
+                System.out.println("\nUsuário deletado com sucesso!\n");
+                return;
             }
         }
     }
@@ -36,6 +39,8 @@ public class metodoUsuario {
             if (us.getIdUsuario() == usuario.getIdUsuario()) {
                 listaUsuarios.remove(us);
                 listaUsuarios.add(usuario);
+                System.out.println("\n" + usuario + "\n");
+                return;
             }
         }
     }

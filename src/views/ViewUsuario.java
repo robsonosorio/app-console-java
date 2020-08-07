@@ -14,7 +14,7 @@ public class ViewUsuario {
         String decisao;
 
 
-        System.out.println("-- [Usuário] --\n");
+        System.out.println("\n-- [Usuário] --");
         System.out.println("1 - Cadastrar usuário");
         System.out.println("2 - Buscar usuários");
         System.out.println("3 - Alterar usuário");
@@ -34,7 +34,6 @@ public class ViewUsuario {
                 String email = read.next();
                 Usuario us1 = new Usuario(idUsuario, nome, email);
                 metodo.cadastraUsuario(us1);
-                System.out.println(us1);
                 break;
             case "2":
                 System.out.println("-- Buscar usuários --\n");
@@ -50,7 +49,6 @@ public class ViewUsuario {
                 email = read.next();
                 Usuario us2 = new Usuario(idUsuario, nome, email);
                 metodo.alteraUsuario(us2);
-                System.out.println(us2);
                 break;
             case "4":
                 System.out.println("-- Deletar usuário --\n");
@@ -59,7 +57,7 @@ public class ViewUsuario {
                 metodo.deletaUsuario(id);
                 break;
             default:
-                System.out.println("Por favor, digite uma opção válida");
+                System.out.println("\nPor favor, digite opção válida\n");
                 break;
         }
     }

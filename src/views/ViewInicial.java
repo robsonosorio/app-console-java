@@ -10,7 +10,7 @@ public class ViewInicial {
     public void menuInicial () {
 
         do {
-            System.out.println("-- MENU --\n");
+            System.out.println("\n-- [MENU] --");
             System.out.println("1. Cadastro de cliente");
             System.out.println("2. Cadastro de produto");
             System.out.println("0. Sair");
@@ -21,6 +21,7 @@ public class ViewInicial {
 
                 case "1":
                     view.menuUsuario();
+                    menuInicial();
                     break;
 
                 case "2":
@@ -31,7 +32,7 @@ public class ViewInicial {
                     System.out.println("Até logo!");
                     break;
                 default:
-                    System.out.println("Por favor, digite uma opção válida");
+                    System.out.println("\nPor favor, digite opção válida\n");
                     break;
             }
         }while(decisao != "0");
