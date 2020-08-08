@@ -8,19 +8,18 @@ import java.util.List;
 public class metodoUsuario {
     List<Usuario> listaUsuarios = new ArrayList<>();
 
-
-
     public void cadastraUsuario(Usuario usuario) {
             listaUsuarios.add(usuario);
-            System.out.println(usuario + "\n" );
+            System.out.println(usuario + "\n");
     }
 
     public void buscaUsuario() {
-        for (Usuario us : listaUsuarios) {
-            if(listaUsuarios == null){
-                System.out.println("\nLista não possui usuário cadastrado!\n");
+        if(listaUsuarios.isEmpty()){
+            System.out.println("\nLista não possui usuário cadastrado!\n");
+        } else {
+            for (Usuario us : listaUsuarios) {
+                System.out.println(us);
             }
-            System.out.println(us);
         }
     }
 
@@ -37,10 +36,10 @@ public class metodoUsuario {
     public void alteraUsuario(Usuario usuario) {
         for (Usuario us : listaUsuarios) {
             if (us.getIdUsuario() == usuario.getIdUsuario()) {
-                listaUsuarios.remove(us);
-                listaUsuarios.add(usuario);
-                System.out.println("\n" + usuario + "\n");
-                return;
+                us.setIdUsuario(usuario.idUsuario);
+                us.setNome(usuario.nome);
+                us.setEmail(usuario.email);
+                System.out.println("\nAlteração realizada com sucesso!\n");
             }
         }
     }

@@ -4,7 +4,8 @@ import java.util.Scanner;
 
 public class ViewInicial {
     Scanner read = new Scanner(System.in);
-    ViewUsuario view = new ViewUsuario();
+    ViewUsuario usuario = new ViewUsuario();
+    ViewProduto produto = new ViewProduto();
     String decisao;
 
     public void menuInicial () {
@@ -16,18 +17,14 @@ public class ViewInicial {
             System.out.println("0. Sair");
             System.out.println("-----------------------");
             System.out.print("Digite opção: ");
-            decisao = read.nextLine();
+            decisao = read.next();
             switch (decisao) {
-
                 case "1":
-                    view.menuUsuario();
-                    menuInicial();
+                    usuario.menuUsuario();
                     break;
-
                 case "2":
-                    System.out.println("");
+                    produto.menuProduto();
                     break;
-
                 case "0":
                     System.out.println("Até logo!");
                     break;
@@ -36,5 +33,6 @@ public class ViewInicial {
                     break;
             }
         }while(decisao != "0");
+        return;
     }
 }

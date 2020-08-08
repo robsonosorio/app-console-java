@@ -38,6 +38,6 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "ID: " + getIdUsuario() + " | Nome: " + getNome() + " | Email: " + getEmail() + "\n";
+        return "USUARIO[ID: " + getIdUsuario() + " | Nome: " + getNome() + " | Email: " + getEmail() +"]";
     }
 }
